@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  
+Speedy Numbers Android Game
+Copyright 2013 Jesse Toms
+ 
+  This file is part of Speedy Numbers.
+
+  Speedy Numbers is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Speedy Numbers is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Speedy Numbers.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+<resources>
+    <string name="loading">loading</string>
+    <string name="signed_out">signed_out</string>
+    <string name="signed_in_fmt">LoginTest</string>
+    <string name="app_name">MiniSeconds</string>
+    <string name="button_help">Help</string>
+    <string name="button_highscores">High Scores</string>
+    <string name="button_newgame">New Game</string>
+    <string name="button_ok">OK</string>
+    <string name="button_NextGame">Next Game</string>
+    <string name="button_quickplay">Quickplay</string>
+    <string name="button_reset_high_scores">Reset High Scores</string>
+    <string name="button_start">Start</string>
+    <string name="game_choices_prompt">Select Game Type</string>
+    <string name="game_type">Game Type:</string>
+    <string name="menu_settings">Settings</string>
+    <string name="textview_help_contact_info">Your feedback is greatly appreciated and should be sent to jesseotoms@gmail.com</string>
+    <string name="textview_help_feedback">Feedback</string>
+    <string name="textview_help_intro">The objective in Speedy Numbers is to complete the number sequence as fast as possible. Each error made adds a 5 second time penalty. The sequences are:</string>
+    <string name="textview_help_multiples">This sequence starts at the multiple chosen and each number in the sequence is the next successive multiple. e.g. (for multiples of 2) 2,4,6&#8230;</string>
+    <string name="textview_help_multiples_title">Multiples</string>
+    <string name="textview_help_odd_numbers">This sequence starts at number 1 and each number in the sequence is the next successive odd number. e.g. 1,3,5&#8230;</string>
+    <string name="textview_help_odd_numbers_title">Odd Numbers</string>
+    <string name="textview_help_open_source">This program is open source and the source code can be found at https://www.github.com/jesseotoms/Speedy-Numbers</string>
+    <string name="textview_help_prime_numbers_title">Prime Numbers</string>
+    <string name="textview_help_prime_numbers">This sequence starts at number 2 and each number in the sequence is the next successive prime number. e.g. 2,3,5&#8230;</string>
+    <string name="textview_help_singles">The sequence used in Quickplay. It starts at number 1 and each number in the sequence is simply 1 higher than the previous number. e.g. 1,2,3&#8230;</string>
+    <string name="textview_help_singles_title">Singles</string>
+    
+    <string name="textview_table_mode">Mode</string>
+    <string name="textview_table_rank">Rank</string>
+    <string name="textview_table_time">Time</string>
+    <string name="title_activity_help">Help</string>
+    <string name="title_activity_finish_screen">Finish Screen</string>
+    <string name="title_activity_game_select">Game Select</string>
+    <string name="title_activity_high_scores">High Scores</string>
+    <string name="title_activity_play">Play</string>
+    <string name="textview_finished">Finished!</string>
+    <string name="textview_table_errors">Errors</string>
+    <string-array name="game_choices">
+        <item>Singles</item>
+        <item>Multiples of 2</item>
+        <item>Multiples of 3</item>
+        <item>Multiples of 4</item>
+        <item>Multiples of 5</item>
+        <item>Multiples of 6</item>
+        <item>Multiples of 7</item>
+        <item>Multiples of 8</item>
+        <item>Multiples of 9</item>
+        <item>Multiples of 10</item>
+        <item>Odd Numbers</item>
+        <item>Prime Numbers</item>
+    </string-array>
+
+</resources>
