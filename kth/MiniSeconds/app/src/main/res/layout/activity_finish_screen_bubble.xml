@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="seveno.android.miniseconds.BubbleShooter.FinishScreenBubble">
+    
     <TextView
         android:id="@+id/txt_b_finished"
         android:layout_width="fill_parent"
@@ -36,8 +37,8 @@
         android:textSize="@dimen/text_size"
         android:typeface="serif"/>
     
-  <!--  <TextView
-        android:id="@+id/txt_b_errors"
+    <!--<TextView
+        android:id="@+id/textview_errors"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -46,7 +47,7 @@
         android:typeface="serif"/>-->
     
     <TextView
-        android:id="@+id/txt_b_score"
+        android:id="@+id/fin_bubble_score"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -55,12 +56,14 @@
         android:typeface="serif"/>
     
     <Button
-        android:id="@+id/btn_Bubble_Next"
+        android:id="@+id/btn_bubble_next"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:onClick="btn_Bubble_Next"
+        android:onClick="btn_bubble_next"
         android:text="@string/button_NextGame"
         android:textSize="@dimen/text_size"
         android:typeface="serif"/>
+    
+    
 </LinearLayout>

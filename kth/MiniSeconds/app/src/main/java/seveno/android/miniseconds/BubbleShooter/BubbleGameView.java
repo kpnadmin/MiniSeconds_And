@@ -23,10 +23,10 @@ import seveno.android.miniseconds.R;
  * Created by Administrator on 2017-08-16.
  */
 
-public class BubbleGameView extends SurfaceView implements SurfaceHolder.Callback{
+public class BubbleGameView extends SurfaceView implements SurfaceHolder.Callback {
     public GameThread mThread;
     SurfaceHolder mHolder;
-    public int BubbleScore = 0 ;
+    public int BubbleScore = 0;
 
     public int getBubbleScore() {
         return BubbleScore;
@@ -53,8 +53,6 @@ public class BubbleGameView extends SurfaceView implements SurfaceHolder.Callbac
         super(context, attrs, defStyleAttr);
     }
 
-
-
     //-------------------------------------
     //  SurfaceView가 생성될 때 실행되는 부분
     //-------------------------------------
@@ -64,7 +62,9 @@ public class BubbleGameView extends SurfaceView implements SurfaceHolder.Callbac
         mThread.setDaemon(true);
         setFocusable(true);
         mThread.start();
+      // MakeBubble();
     }
+
     //-------------------------------------
     //  SurfaceView가 바뀔 때 실행되는 부분
     //-------------------------------------
@@ -72,6 +72,7 @@ public class BubbleGameView extends SurfaceView implements SurfaceHolder.Callbac
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
 
     }
+
     //-------------------------------------
     //  SurfaceView가 해제될 때 실행되는 부분
     //-------------------------------------
@@ -93,23 +94,36 @@ public class BubbleGameView extends SurfaceView implements SurfaceHolder.Callbac
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         // return super.onTouchEvent(event);
-        BubbleScore =0;
+        BubbleScore = 0;
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             synchronized (mHolder) {
                 int x = (int) event.getX();
                 int y = (int) event.getY();
                 mThread.TouchBubble(x, y);
-                //mThread.MakeBubble(x, y);
-                BubbleScore +=100;
-
+                // mThread.MakeBubble(x, y);
+                BubbleScore += 100;
+                setBubbleScore(BubbleScore);
             }
-        }else{
+        } else {
             return false;
         }
         return true;
 
     }
+ public void MakeBubble() {
+        synchronized (mHolder) {
+            Random rnd1 = new Random();
+            int x = rnd1.nextInt(mThread.width); //화면의 폭 안의 랜덤한 x지점
+            int y = rnd1.nextInt(mThread.height); //화면의 높이 안의 랜덤한 y지점
+            boolean flag = false;
+            if (flag == false)                              // 비눗방울 Touch가 아니면 비눗방울 생성
+                mThread.mBubble.add(new Bubble(mThread.mContext, x, y, mThread.width, mThread.height));
+        }
+
+    }
+
 }
+
 
 //-------------------------------------
 //  GameThread Class

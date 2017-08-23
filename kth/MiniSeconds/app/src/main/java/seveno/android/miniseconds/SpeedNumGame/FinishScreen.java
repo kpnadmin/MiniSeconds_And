@@ -35,7 +35,7 @@ public class FinishScreen extends AppCompatActivity {
         //long elapsedTime = initialTime;
 
         T_score = speedy_score;
-        fin_speedy_score.setText(String.valueOf(speedy_score));
+        fin_speedy_score.setText("SCORE : " + String.valueOf(speedy_score));
         fin_speedy_score.setTextSize(20);
         setupInitialTimeTextView(initialTime);
         setupFinalTimeTextView(initialTime, elapsedTime);
