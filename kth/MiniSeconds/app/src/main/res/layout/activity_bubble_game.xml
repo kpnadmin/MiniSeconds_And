@@ -6,7 +6,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="seveno.android.miniseconds.BubbleShooter.BubbleGame">
+    tools:context="seveno.android.miniseconds.BubbleShooter.BubbleGame"
+    android:background="@drawable/bubble_sky"
+    >
     
     <LinearLayout
         android:id="@+id/linear_text"
@@ -29,6 +31,19 @@
     </LinearLayout>
     
     
+    <TextView
+        android:id="@+id/countdown_view_b"
+        android:layout_width="300dp"
+        android:layout_height="320dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:gravity="center_horizontal"
+        android:text="3"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="300dp"
+        />
+    
     <LinearLayout
         android:id="@+id/linear_1"
         android:layout_width="368dp"
@@ -50,10 +65,10 @@
             android:max="100"/>
     </LinearLayout>
     
-   <!-- <seveno.android.miniseconds.BubbleShooter.BubbleGameView
+  <seveno.android.miniseconds.BubbleShooter.BubbleGameView
         android:id="@+id/mBubbleGameView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>-->
+        android:layout_height="match_parent"/>
 
 </FrameLayout>
     <!-- <LinearLayout

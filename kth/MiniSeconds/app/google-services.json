@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "242903320826",
+    "project_id": "miniseconds"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242903320826:android:ff068dc68a136973",
+        "android_client_info": {
+          "package_name": "seveno.android.miniseconds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "242903320826-hh07va25ecgc9vqac0lc0791ddc30bdu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "seveno.android.miniseconds",
+            "certificate_hash": "3268c1ad21fba1943f00e62a99dbbc7aef828bf3"
+          }
+        },
+        {
+          "client_id": "242903320826-h7rmj82bp435csbfq205o3njgiobc1mh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "seveno.android.miniseconds",
+            "certificate_hash": "26f1aea6f0805075df9febebaa08bcff09c7ea85"
+          }
+        },
+        {
+          "client_id": "242903320826-367qvjjuag4mkncd1b4bm5h169oaa5ki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOlrxtUTdOtJwcjcRBh-BzXiXwYYtvKEI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

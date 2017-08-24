@@ -1,49 +1,48 @@
 package seveno.android.miniseconds.BubbleShooter;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
 import java.util.Locale;
 
 import seveno.android.miniseconds.GameEnding;
-import seveno.android.miniseconds.MainActivity;
 import seveno.android.miniseconds.R;
 
 public class FinishScreenBubble extends AppCompatActivity {
-    private static final int ERROR_PENALTY_SECONDS = 10;
-    private TextView txt_b_score, txt_b_finished;
+
+    private TextView fin_bubble_score;
     private int T_score;
-    private static long bubbleTime;
-    private static int bubblescore;
+    private static long initialTime;
+    private static int bubble_score;
     private static long elapsedTime;
+    private static final int ERROR_PENALTY_SECONDS = 10;
+    private long final_elapsedTime;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish_screen_bubble);
-        txt_b_score = (TextView) findViewById(R.id.txt_b_score);
-        txt_b_finished = (TextView) findViewById(R.id.txt_b_finished);
+        fin_bubble_score = (TextView) findViewById(R.id.fin_bubble_score);
+        Intent  intent = getIntent();
 
+        initialTime = intent.getLongExtra("seveno.android.miniseconds.bubbleshooter.bubbleGame.bubbleTime",0);
+        bubble_score = intent.getIntExtra("seveno.android.miniseconds.bubbleshooter.bubbleGame.tscore2", 0);
+        elapsedTime = intent.getLongExtra("seveno.android.miniseconds.BubbleShooter.BubbleGame.elapsedTime",0);
+        final_elapsedTime = initialTime+elapsedTime;
 
-       /* intent.putExtra("seveno.android.miniseconds.bubbleshooter.bubbleGame.BubbleTime", timeTakenMillis);
+       /* intent.putExtra("seveno.android.miniseconds.bubbleshooter.bubbleGame.bubbleTime", timeTakenMillis);
         intent.putExtra("seveno.android.miniseconds.bubbleshooter.bubbleGame.tscore2", T_score);
         intent.putExtra("seveno.android.miniseconds.BubbleShooter.BubbleGame.elapsedTime",elapsedTime);*/
-
-        bubbleTime = getIntent().getLongExtra("seveno.android.miniseconds.bubbleshooter.bubbleGame.bubbleTime",0);
-        //int numErrors = getIntent().getIntExtra("seveno.android.miniseconds.speednumgame.numErrors",0);
-        int t2score = getIntent().getIntExtra("seveno.android.miniseconds.bubbleshooter.bubbleGame.tscore2", 0);
-        elapsedTime = getIntent().getLongExtra("seveno.android.miniseconds.bubbleshooter.bubbleGame.elapsedTime",0);
-
-
-        T_score = t2score;
-        txt_b_score.setText(String.valueOf(T_score));
-        txt_b_score.setTextSize(20);
-        setupInitialTimeTextView(bubbleTime);
-        setupFinalTimeTextView(bubbleTime, elapsedTime);
+        T_score = bubble_score;
+        fin_bubble_score.setText("SCORE : " + String.valueOf(T_score));
+        fin_bubble_score.setTextSize(20);
+        setupInitialTimeTextView(initialTime);
+        setupFinalTimeTextView(initialTime, elapsedTime);
     }
-
 
     private String convertToMinutesAndSeconds(long toConvert){
         int seconds = (int) (toConvert / 1000);
@@ -52,9 +51,9 @@ public class FinishScreenBubble extends AppCompatActivity {
         String minutesAndSeconds = String.format(Locale.ENGLISH,"%d:%02d", minutes, seconds);
         return minutesAndSeconds;
     }
-    private void setupInitialTimeTextView(long bubbleTime){
+    private void setupInitialTimeTextView(long initialTime){
         TextView initialTimeTextView = (TextView)findViewById(getResources().getIdentifier("txt_b_time","id",this.getPackageName()));
-        String initialTimeString = convertToMinutesAndSeconds(bubbleTime);
+        String initialTimeString = convertToMinutesAndSeconds(initialTime);
         initialTimeTextView.setText("Your time was "+initialTimeString);
     }
 
@@ -67,24 +66,22 @@ public class FinishScreenBubble extends AppCompatActivity {
             errorTextView.setText("You made "+numErrors+" errors for a time penalty of "+timePenalty+" seconds.");
         }
     }*/
+   private void setupFinalTimeTextView(long initialTime, long elapsedTime){
+       TextView finalTimeTextView = (TextView)findViewById(getResources().getIdentifier("txt_b_finaltime","id",this.getPackageName()));
+       String finalTime = convertToMinutesAndSeconds(initialTime + elapsedTime);
+       finalTimeTextView.setText("Your final time is "+finalTime);
+   }
 
-    private void setupFinalTimeTextView(long bubbleTime, long elapsedTime){
-        TextView finalTimeTextView = (TextView)findViewById(getResources().getIdentifier("txt_b_finaltime","id",this.getPackageName()));
-        String finalTime = convertToMinutesAndSeconds(bubbleTime + elapsedTime);
-        finalTimeTextView.setText("Your final time is "+finalTime);
-    }
-
-  /*  public void btn_ReturnMain(View view){
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("seveno.android.miniseconds.avoidstargame.initialTime",0);
-        intent.putExtra("seveno.android.miniseconds.avoidstargame.numErrors",0);
-        startActivity(intent);
-        finish();
-    }*/
-    public void btn_Bubble_Next(View view){
+    public void btn_bubble_next(View view){
         Intent intent = new Intent(this, GameEnding.class);
-        intent.putExtra("seveno.android.miniseconds.gameEnding.elapsedTime",elapsedTime);
+        intent.putExtra("seveno.android.miniseconds.BubbleShooter.BubbleGame.initialTime",initialTime);
         intent.putExtra("seveno.android.miniseconds.gameEnding.tscore",T_score);
+        intent.putExtra("seveno.android.miniseconds.gameEnding.elapsedTime",final_elapsedTime);
+        /*
+            long elapsedTime = intent.getLongExtra("seveno.android.miniseconds.gameEnding.elapsedTime", 0);
+        int finalScore = intent.getIntExtra("seveno.android.miniseconds.gameEnding.tscore",0);
+
+        */
         //startActivityForResult(intent, 0);
         startActivity(intent);
         finish();

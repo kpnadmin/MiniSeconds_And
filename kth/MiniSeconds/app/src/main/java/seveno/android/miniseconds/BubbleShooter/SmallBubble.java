@@ -53,8 +53,8 @@ public class SmallBubble {
     public void MoveSBubble() {
         life--;
         cr += speed;
-        x = (int) (cx + Math.cos(r) * cr);
-        y = (int) (cy - Math.sin(r) * cr);
+        x = (int) (cx + Math.cos(r) * cr);//Math.sin은 각도를 반영해 x축의 좌표를 담당하고,
+        y = (int) (cy - Math.sin(r) * cr);//Math.cos은 각도를 반영해 y축의 좌표를 담당합니다.
         if (x < -radi || x > width + radi ||
                 y < -radi || y > height + radi || life <= 0)
             dead = true;
