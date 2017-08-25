@@ -39,7 +39,7 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file('E:/minisecondsUnity.keystore')
+            storeFile file('D:/minisecondsUnity.keystore')
             storePassword '123456'
             keyAlias 'mykeystore'
             keyPassword ''

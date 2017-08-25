@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD:ljh/RubberDuck Adventure/src/main/AndroidManifest.xml
 <manifest package="seveno.android.minseconds.adventure"
           xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
@@ -94,5 +93,5 @@
   <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
   <uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false" />
   <uses-feature android:name="android.hardware.touchscreen.multitouch.distinct" android:required="false" />
->>>>>>> ecf793e8e6cfc0c7447955a4ce21d4f786820f0f:lsy/airplane/src/main/AndroidManifest.xml
+    
 </manifest>
